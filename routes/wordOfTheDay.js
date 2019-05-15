@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
       if(err) {
           return console.log(err);
       }
-      console.log('success')
+      // console.log('success')
       res.send(data.word); 
     }); 
   });

@@ -24,17 +24,15 @@ module.exports = class utilities {
 
     
 
-    getWodDefinition() {
+    getWodDefinition(word) {
             return new Promise((resolve, reject) => {
-                fs.readFile('./wod.txt', 'utf8', function(err, contents){
-                var hitUrl = constants.baseUrl+contents+constants.definitionsEndpoint+constants.api_key;
+                var hitUrl = constants.baseUrl+word+constants.definitionsEndpoint+constants.api_key;
                 request({url: hitUrl, json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
                     if(err){
                         reject(err);
                     }
                     resolve(body);
                 });
-            });
         });
     }
 

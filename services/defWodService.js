@@ -7,9 +7,9 @@ module.exports = class wordDefinition {
         this.utilities = new utilities();
     }
 
-    async wordDefinition() {
+    async wordDefinition(word) {
         try {
-            var wod = await this.utilities.getWodDefinition();
+            var wod = await this.utilities.getWodDefinition(word);
             // console.log("wod")
             return wod;
         } catch (error) {
