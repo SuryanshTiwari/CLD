@@ -12,12 +12,11 @@ module.exports = class utilities {
 
     generateWord() {
         return new Promise((resolve, reject) => {
-            var hitUrl = 'https://fourtytwowords.herokuapp.com/words/randomWord?api_key='+constants.api_key;
+            var hitUrl = constants.randomWordurl+constants.api_key;
             request({url: hitUrl,json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
                 if(err){
                     reject(err);
                 }
-                // console.log(body);
                 resolve(body);
             });
         });
