@@ -10,3 +10,4 @@ define("randomWordurl", 'https://fourtytwowords.herokuapp.com/words/randomWord?a
 define("baseUrl", 'https://fourtytwowords.herokuapp.com/word/');
 define("definitionsEndpoint", '/definitions?api_key=');
 define("synonymsEndpoint", "/relatedWords?api_key=");
+define("antonymsEndpoint", "/relatedWords?api_key=");

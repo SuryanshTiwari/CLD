@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var wodRouter = require('./routes/wordOfTheDay');
 var defWodRouter = require('./routes/defWod');
 var synonymsWodRouter = require('./routes/synonymsWod');
+var antonymsWodRouter = require('./routes/antonymsWod');
 
 
 var app = express();
@@ -25,7 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/wod', wodRouter);                               // this corresponds to word of the day 
 app.use('/def', defWodRouter); 
-app.use('/syn', synonymsWodRouter);   
+app.use('/syn', synonymsWodRouter);  
+app.use('/ant', antonymsWodRouter);  
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
