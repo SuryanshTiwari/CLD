@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var wodRouter = require('./routes/wordOfTheDay');
+var defWodRouter = require('./routes/defWod');
 
 var app = express();
 
@@ -20,7 +21,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/wod', wodRouter);
+app.use('/wod', wodRouter);                               // this corresponds to word of the day 
+app.use('/def', defWodRouter);   
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

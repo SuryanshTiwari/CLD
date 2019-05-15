@@ -10,11 +10,11 @@ module.exports = class wordOfTheDayService {
    async  get40WordsAndReturnRandomWord() {
         try {
           var  WordsList = [];
-            for(var i = 0; i < 40; i++){
+            for(var i = 0; i < 4; i++){
                 var word = await this.utilities.generateWord();
                 WordsList.push(word);
             }
-            var idx = this.utilities.getRandomInt(40);
+            var idx = this.utilities.getRandomInt(4);
             return WordsList[idx];
         } catch (error) {
             throw error;
