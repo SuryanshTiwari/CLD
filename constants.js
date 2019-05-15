@@ -9,3 +9,4 @@ define("api_key", '6fa8390c82a4c5804a8ac21f61731349318550812bdd23e4a9ac51c350f6c
 define("randomWordurl", 'https://fourtytwowords.herokuapp.com/words/randomWord?api_key=');
 define("baseUrl", 'https://fourtytwowords.herokuapp.com/word/');
 define("definitionsEndpoint", '/definitions?api_key=');
+define("synonymsEndpoint", "/relatedWords?api_key=");
