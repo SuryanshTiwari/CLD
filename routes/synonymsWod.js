@@ -6,7 +6,8 @@ var synonymsWod = require('../services/synonymsWodService');
 /* GET users listing. */
 router.get('/:word', function(req, res, next) {
   const SynonymsWod = new synonymsWod();
-  var word =  SynonymsWod.synonymsWod(word).then(data => {res.send(data)});
+  var word = req.params.word;
+  SynonymsWod.synonymsWod(word).then(data => {res.send(data)});
 });
 
 module.exports = router;

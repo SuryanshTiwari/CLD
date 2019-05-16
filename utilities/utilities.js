@@ -12,8 +12,8 @@ module.exports = class utilities {
 
     generateWord() {
         return new Promise((resolve, reject) => {
-            var hitUrl = constants.randomWordurl+constants.api_key;
-            request({url: hitUrl,json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
+            var url = constants.randomWordurl+constants.api_key;
+            request({url: url,json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
                 if(err){
                     reject(err);
                 }
@@ -26,8 +26,8 @@ module.exports = class utilities {
 
     getWodDefinition(word) {
             return new Promise((resolve, reject) => {
-                var hitUrl = constants.baseUrl+word+constants.definitionsEndpoint+constants.api_key;
-                request({url: hitUrl, json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
+                var url = constants.baseUrl+word+constants.definitionsEndpoint+constants.api_key;
+                request({url: url, json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
                     if(err){
                         reject(err);
                     }
@@ -36,10 +36,9 @@ module.exports = class utilities {
         });
     }
 
-    getSynonyms(){
-        return new Promise((resolve, reject) => {
-            fs.readFile('./wod.txt', 'utf8', function(err, contents){
-                var url = constants.baseUrl+contents+constants.synonymsEndpoint+constants.api_key;
+    getSynonyms(word){
+            return new Promise((resolve, reject) => {
+                var url = constants.baseUrl+word+constants.synonymsEndpoint+constants.api_key;
                 request({url: url, json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
                     if(err){
                         reject(err);
@@ -51,15 +50,14 @@ module.exports = class utilities {
                     else
                         resolve("Synonyms for this word not found");
                 });
-            });
         });
+        
     }
 
 
-    getAntonyms(){
-        return new Promise((resolve, reject) => {
-            fs.readFile('./wod.txt', 'utf8', function(err, contents){
-                var url = constants.baseUrl+contents+constants.antonymsEndpoint+constants.api_key;
+    getAntonyms(word){
+            return new Promise((resolve, reject) => {
+                var url = constants.baseUrl+word+constants.antonymsEndpoint+constants.api_key;
                 request({url: url, json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
                     if(err){
                         reject(err);
@@ -71,14 +69,13 @@ module.exports = class utilities {
                     else
                         resolve("Antonyms for this word not found");
                 });
-            });
         });
     }
 
     getExamples(word){
         return new Promise((resolve, reject) => {
-            var hitUrl = constants.baseUrl+word+constants.examplesEndpoint+constants.api_key;
-            request({url: hitUrl, json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
+            var url = constants.baseUrl+word+constants.examplesEndpoint+constants.api_key;
+            request({url: url, json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
                 if(err){
                     reject(err);
                 }
@@ -86,4 +83,9 @@ module.exports = class utilities {
             });
         });
     }
+
+    getAllDetails(word){
+        return new Promise((resolve, reject) => {
+            
+    });}
 };
