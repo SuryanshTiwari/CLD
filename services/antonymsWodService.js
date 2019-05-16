@@ -7,9 +7,9 @@ module.exports = class antonymsWod {
         this.utilities = new utilities();
     }
 
-    async antonymsWod() {
+    async antonymsWod(word) {
         try {
-            var wod = await this.utilities.getAntonyms();
+            var wod = await this.utilities.getAntonyms(word);
             return wod;
         } catch (error) {
             throw error;

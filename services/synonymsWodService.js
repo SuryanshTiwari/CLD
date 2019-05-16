@@ -7,9 +7,9 @@ module.exports = class synonymsWod {
         this.utilities = new utilities();
     }
 
-    async synonymsWod() {
+    async synonymsWod(word) {
         try {
-            var wod = await this.utilities.getSynonyms();
+            var wod = await this.utilities.getSynonyms(word);
             return wod;
         } catch (error) {
             throw error;
