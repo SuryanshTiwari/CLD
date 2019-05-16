@@ -74,4 +74,16 @@ module.exports = class utilities {
             });
         });
     }
+
+    getExamples(word){
+        return new Promise((resolve, reject) => {
+            var hitUrl = constants.baseUrl+word+constants.examplesEndpoint+constants.api_key;
+            request({url: hitUrl, json: true, headers: {'User-Agent': 'request'}}, function(err, res, body){
+                if(err){
+                    reject(err);
+                }
+                resolve(body);
+            });
+        });
+    }
 };
