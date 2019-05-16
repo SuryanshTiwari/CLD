@@ -31,7 +31,17 @@ module.exports = class utilities {
                     if(err){
                         reject(err);
                     }
-                    resolve(body);
+                    var html = '<!DOCTYPE html><html><body><h1>Definitions: </h1>';
+                    if(body){
+                        for(var i = 0; i < body.length; i++){
+                            html += '<li>' + body[i].text + '</li>';
+                        }
+                        html += '</body></html>';
+                        resolve(html);
+                    }else{
+                        resolve(html + "Definitions for this word not found");
+                    }
+                    resolve(body[0]);
                 });
         });
     }
