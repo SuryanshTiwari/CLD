@@ -10,6 +10,7 @@ var defWodRouter = require('./routes/defWod');
 var synonymsWodRouter = require('./routes/synonymsWod');
 var antonymsWodRouter = require('./routes/antonymsWod');
 var examplesWodRouter = require('./routes/examplesWod');
+var fullDictWodRouter = require('./routes/fullDictWod');
 
 
 var app = express();
@@ -29,7 +30,8 @@ app.use('/wod', wodRouter);                               // this corresponds to
 app.use('/def', defWodRouter); 
 app.use('/syn', synonymsWodRouter);  
 app.use('/ant', antonymsWodRouter);
-app.use('/ex', examplesWodRouter);  
+app.use('/ex', examplesWodRouter); 
+app.use('/dict', fullDictWodRouter);  
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
