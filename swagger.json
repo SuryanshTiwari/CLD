@@ -1,0 +1,144 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Command Line Dictionary Tool",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3001",
+    "basePath": "",
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/def/{word}": {
+        "parameters": [
+          {
+            "name": "word",
+            "in": "path",
+            "required": true,
+            "description": "word to be used for the API",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Definition"
+          ],
+          "summary": "Definition of Word entered",
+          "responses": {
+            "200": {
+              "description": "operations successfull"
+             
+            }
+          }
+        }
+      },
+      "/syn/{word}": {
+        "parameters": [
+          {
+            "name": "word",
+            "in": "path",
+            "required": true,
+            "description": "word to be used for the API",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Synonyms"
+          ],
+          "summary": "Synonyms of Word entered",
+          "responses": {
+            "200": {
+              "description": "operations successfull"
+             
+            }
+          }
+        }
+      },
+      "/ant/{word}": {
+        "parameters": [
+          {
+            "name": "word",
+            "in": "path",
+            "required": true,
+            "description": "word to be used for the API",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Antonyms"
+          ],
+          "summary": "Antonyms of Word entered",
+          "responses": {
+            "200": {
+              "description": "operations successfull"
+             
+            }
+          }
+        }
+      },
+      "/dict/{word}": {
+        "parameters": [
+          {
+            "name": "word",
+            "in": "path",
+            "required": true,
+            "description": "word to be used for the API",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Dictionary"
+          ],
+          "summary": "Dictionary of Word entered",
+          "responses": {
+            "200": {
+              "description": "operations successfull"
+             
+            }
+          }
+        }
+      },
+      "/word-of-the-day": {
+        "get": {
+          "tags": [
+            "Word of the day"
+          ],
+          "summary": "Word of the day",
+          "responses": {
+            "200": {
+              "description": "operations successfull"
+             
+            }
+          }
+        }
+      },
+      "/dict-word-of-the-day": {
+        "get": {
+          "tags": [
+            "Dictionary of word of the day"
+          ],
+          "summary": "Dictionary of word of the day",
+          "responses": {
+            "200": {
+              "description": "operations successfull"
+             
+            }
+          }
+        }
+      }
+    }
+  }
